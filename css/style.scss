@@ -1,0 +1,813 @@
+@charset "UTF-8";
+
+$mobile: 'screen and (max-width:640px)';
+
+#wrap {
+	min-width: 1200px;
+	margin: 0 auto;
+
+	@media #{$mobile} {
+		min-width: 100%;
+	}
+
+	> header {
+		position: relative;
+		z-index: 100;
+		width: 100%;
+		min-width: 1200px;
+		background-color: #fff;
+		border-bottom: 1px solid #ddd;
+
+		@media #{$mobile} {
+			min-width: 100%;
+		}
+
+		&.fixed {
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
+
+		> .container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 1200px;
+			height: 80px;
+			margin: 0 auto;
+
+			@media #{$mobile} {
+				display: block;
+				width: 100%;
+				height: 60px;
+			}
+
+			> .logo {
+				width: 200px;
+				height: 60px;
+				background-image: url(./../images/001_header/newsroom-logo.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center center;
+				@media #{$mobile} {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					margin-left: -100px;
+				}
+				> a {
+					display: block;
+					height: 65px;
+					text-indent: -9999px;
+				} //end of a
+			} //end of .logo
+
+			> nav {
+				display: block;
+				@media #{$mobile} {
+					display: none;
+					position: absolute;
+					left: 0;
+					top: 60px;
+					min-width: 100%;
+					border-top: 1px solid #ddd;
+				}
+				> .gnb {
+					display: flex;
+					justify-content: space-between;
+					width: 450px;
+
+					@media #{$mobile} {
+						display: initial;
+					}
+
+					> li {
+						@media #{$mobile} {
+							background-color: #222;
+							line-height: 2;
+							text-indent: 10px;
+
+							&:hover > a {
+								font-weight: 600;
+							}
+						}
+						a {
+							display: block;
+							font-size: 20px;
+
+							@media #{$mobile} {
+								color: #fff;
+							}
+						}
+
+						&.on {
+							font-weight: 600;
+						}
+					}
+				}
+			} //end of nav
+
+			> div {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				width: 300px;
+				@media #{$mobile} {
+					position: absolute;
+					top: 18px;
+					right: 0;
+					width: 100px;
+				}
+				> .search {
+					display: block;
+					width: 24px;
+					height: 24px;
+					background-image: url(./../images/001_header/icon-search.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					text-indent: -9999px;
+					@media #{$mobile} {
+						order: 10;
+					}
+				}
+				> .local {
+					display: block;
+					width: 24px;
+					height: 24px;
+					background-image: url(./../images/001_header/icon-locale.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					text-indent: -9999px;
+				}
+				> span {
+					display: block;
+					font-weight: 600;
+
+					@media #{$mobile} {
+						display: none;
+					}
+				}
+				> .cjLogo {
+					display: block;
+					width: 60px;
+					height: 50px;
+					background-image: url(./../images/001_header/favicon.svg);
+					background-size: contain;
+					background-repeat: no-repeat;
+					text-indent: -9999px;
+
+					@media #{$mobile} {
+						display: none;
+					}
+				}
+				> .bars {
+					display: none;
+					border: none;
+					outline: none;
+					background-color: #fff;
+
+					@media #{$mobile} {
+						display: block;
+						order: 30;
+						font-size: 20px;
+					}
+				}
+			} //end of div
+		} //end of .container
+	} //end of header
+} //end of #wrap
+
+#news {
+	width: 1200px;
+	margin: 30px auto 50px;
+
+	@media #{$mobile} {
+		width: 100%;
+	}
+
+	> .news {
+		display: flex;
+		justify-content: space-between;
+		@media #{$mobile} {
+			display: block;
+		}
+		> .news-main {
+			width: 580px;
+			margin-right: 20px;
+			@media #{$mobile} {
+				width: 95%;
+				margin: 20px auto;
+			}
+			> article {
+				margin-right: 10px;
+				@media #{$mobile} {
+					width: 100%;
+					margin-right: initial;
+				}
+				> .frame {
+					display: block;
+					overflow: hidden;
+					width: 580px;
+					height: 433px;
+					@media #{$mobile} {
+						width: 100%;
+						height: auto;
+					}
+					> a {
+						> img {
+							display: block;
+							width: 100%;
+							height: 100%;
+							border-radius: 20px;
+							transition: all 0.3s;
+							&:hover {
+								transform: scale(1.05);
+							}
+						}
+					}
+				} //end of .frame
+				> h2 {
+					position: relative;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 48px;
+					@media #{$mobile} {
+						width: 90%;
+						font-size: 1em;
+					}
+				}
+				> H3 {
+					font-size: 28px;
+					line-height: 1.2;
+					@media #{$mobile} {
+						width: 90%;
+						font-size: 1.8em;
+					}
+				}
+				> p {
+					font-size: 18px;
+					line-height: 18px;
+					> span {
+						display: block;
+						color: #999;
+					}
+					@media #{$mobile} {
+						display: none;
+					}
+				}
+			}
+		} //end of .news-main
+		> .news-sub {
+			display: flex;
+			flex-direction: column;
+			@media #{$mobile} {
+				width: 95%;
+			}
+			> article {
+				display: flex;
+				flex-direction: row-reverse;
+				margin-top: 10px;
+				@media #{$mobile} {
+					flex-direction: column;
+				}
+
+				> .frame {
+					display: block;
+					overflow: hidden;
+					width: 262px;
+					height: 200px;
+					margin-left: 15px;
+					border-radius: 20px;
+
+					@media #{$mobile} {
+						width: 100%;
+						height: auto;
+					}
+
+					> a {
+						> img {
+							display: block;
+							width: 100%;
+							height: 100%;
+							transition: all 0.3s;
+							&:hover {
+								transform: scale(1.05);
+							}
+						}
+					}
+				}
+				> div {
+					width: 50%;
+					@media #{$mobile} {
+						width: 90%;
+						margin: 0 auto;
+					}
+					> h2 {
+						font-size: 14px;
+						@media #{$mobile} {
+							font-size: 1em;
+						}
+					}
+					> H3 {
+						font-size: 28px;
+						line-height: 1.2;
+						@media #{$mobile} {
+							font-size: 1.8em;
+						}
+					}
+					> p {
+						font-size: 16px;
+						line-height: 16px;
+
+						> span {
+							display: block;
+							color: #999;
+						}
+
+						@media #{$mobile} {
+							display: none;
+						}
+					}
+				}
+			} //end of article
+		} //end of .news-sub
+	} //end of .news
+} //end of #news
+
+#onlyone {
+	width: 1200px;
+	margin: 50px auto 30px;
+
+	@media #{$mobile} {
+		width: 90%;
+	}
+	h2 {
+		font-size: 32px;
+		text-align: center;
+		padding: 50px 0;
+		> span {
+			display: inline-block;
+			height: 50px;
+			font-size: 32px;
+			line-height: 50px;
+			// border: 1px solid #000;
+
+			//글자에 그레디언트 효과
+			color: transparent; //텍스트 색상을 투명하게 처리
+			background: linear-gradient(to right, #de8001 12%, #dd210d 50%, #1158a5 100%);
+			-webkit-background-clip: text; //background를 어디에 적용시킬지 결정
+			background-clip: text; //background를 어디에 적용시킬지 결정
+		}
+	}
+
+	> article {
+		margin: 30px 0;
+		@media #{$mobile} {
+			margin: 30px auto;
+		}
+
+		> .onlyone {
+			display: flex;
+			margin: 30px 0;
+			@media #{$mobile} {
+				flex-flow: column nowrap;
+			}
+
+			.frame {
+				display: block;
+				width: 47%;
+				height: 300px;
+
+				@media #{$mobile} {
+					width: 100%;
+					height: 50%;
+				}
+				> a {
+					> img {
+						display: block;
+						width: 100%;
+						height: 100%;
+						border-radius: 20px;
+					}
+				}
+			} //end of .frame
+
+			> div {
+				width: 47%;
+				padding: 0 50px 0;
+				@media #{$mobile} {
+					width: 90%;
+					padding: 0;
+				}
+				> h3 {
+					padding: 20px 0;
+					font-size: 20px;
+					@media #{$mobile} {
+						padding: 0;
+						font-size: 1em;
+						text-align: center;
+					}
+				}
+				> h4 {
+					padding: 30px 0;
+					font-size: 28px;
+					line-height: 1.2;
+					@media #{$mobile} {
+						padding: 5px 0;
+						font-size: 1.5em;
+						text-align: center;
+					}
+				}
+				> p {
+					font-size: 18px;
+					line-height: 18px;
+
+					@media #{$mobile} {
+						display: none;
+					}
+				}
+			} //end of div
+
+			&._right {
+				flex-direction: row-reverse;
+				text-align: right;
+
+				@media #{$mobile} {
+					flex-direction: column;
+					text-align: initial;
+				}
+			}
+
+			&:nth-of-type(1) > div > h3 > a {
+				color: #cd151d;
+			}
+			&:nth-of-type(2) > div > h3 > a {
+				color: #4969a6;
+			}
+			&:nth-of-type(3) > div > h3 > a {
+				color: #298111;
+			}
+			&:nth-of-type(4) > div > h3 > a {
+				color: #d08400;
+			}
+		} //end of .onlyone
+	} //end of article
+} //end of #onlyone
+
+#heritage {
+	min-width: 1200px;
+	background-color: #efefef;
+	@media #{$mobile} {
+		min-width: 100%;
+	}
+
+	> section {
+		width: 1200px;
+
+		margin: 0 auto;
+		padding: 50px 0;
+
+		@media #{$mobile} {
+			width: 100%;
+		}
+
+		> h2 {
+			text-align: center;
+			> span {
+				display: inline-block;
+				height: 50px;
+				font-size: 32px;
+				line-height: 50px;
+				// border: 1px solid #000;
+
+				//글자에 그레디언트 효과
+				color: transparent; //텍스트 색상을 투명하게 처리
+				background: linear-gradient(to right, #de8001 12%, #dd210d 50%, #1158a5 100%);
+				-webkit-background-clip: text; //background를 어디에 적용시킬지 결정
+				background-clip: text; //background를 어디에 적용시킬지 결정
+			}
+		}
+
+		> article {
+			position: relative;
+
+			margin-top: 20px;
+			> h3 {
+				margin-bottom: 50px;
+				font-weight: 500;
+				font-size: 20px;
+				text-align: center;
+
+				@media #{$mobile} {
+					line-height: 1.2;
+				}
+			}
+
+			> .swiper {
+				// overflow: visible;
+				> .swiper-wrapper {
+					> .swiper-slide {
+						padding: 20px;
+						background-color: #fff;
+						border-radius: 30px;
+						box-sizing: border-box;
+
+						> img {
+							display: block;
+							width: 100%;
+							border-radius: 20px;
+						}
+
+						> p {
+							margin-top: 20px;
+							padding-bottom: 10px;
+							font-size: 20px;
+							line-height: 1.5;
+
+							//텍스트 말줄임 처리
+							overflow: hidden;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+
+							> span,
+							> time {
+								font-weight: 300;
+								font-size: 16px;
+							}
+
+							> span {
+								color: #f00;
+								margin-right: 20px;
+							}
+						}
+					} //end of .swiper-slide
+				} //end of .swiper-wrapper
+			} //end of .swiper
+
+			> .swiper-pagination {
+				bottom: -30px;
+			} //end of .swiper-pagination
+
+			> .swiper-button-prev {
+				position: absolute;
+				top: 60%;
+				left: -50px;
+				color: #222;
+				@media #{$mobile} {
+					display: none;
+				}
+			}
+
+			> .swiper-button-next {
+				position: absolute;
+				top: 60%;
+				right: -50px;
+				color: #222;
+				@media #{$mobile} {
+					display: none;
+				}
+			}
+		} //end of article
+	} //end of section
+} //end of #heritage
+
+#imagelibrary {
+	width: 1200px;
+	margin: 50px auto 30px;
+	@media #{$mobile} {
+		width: 100%;
+	}
+	> h2 {
+		text-align: center;
+		padding: 50px 0;
+		> span {
+			display: inline-block;
+			height: 50px;
+			font-size: 32px;
+			line-height: 50px;
+			// border: 1px solid #000;
+
+			//글자에 그레디언트 효과
+			color: transparent; //텍스트 색상을 투명하게 처리
+			background: linear-gradient(to right, #de8001 12%, #dd210d 50%, #1158a5 100%);
+			-webkit-background-clip: text; //background를 어디에 적용시킬지 결정
+			background-clip: text; //background를 어디에 적용시킬지 결정
+		}
+	}
+
+	> article {
+		width: 1200px;
+		display: flex;
+		justify-content: space-between;
+		@media #{$mobile} {
+			width: 100%;
+			flex-direction: column;
+			align-items: center;
+		}
+		> .box {
+			position: relative;
+			width: 280px;
+			height: 190px;
+			background-size: cover;
+			background-repeat: no-repeat;
+			border-radius: 20px;
+
+			@media #{$mobile} {
+				width: 90%;
+				margin: 20px;
+			}
+
+			&:hover {
+				box-shadow: inset 0 -30px 80px 3px rgba(0, 0, 0, 0.5);
+				transition: all 1s;
+			}
+
+			@media #{$mobile} {
+				box-shadow: inset 0 -30px 80px 3px rgba(0, 0, 0, 0.5);
+			}
+
+			&:nth-of-type(1) {
+				background-image: url(./../images/005_imagelibrary/IL_01.png);
+			}
+			&:nth-of-type(2) {
+				background-image: url(./../images/005_imagelibrary/IL_02.jpg);
+			}
+			&:nth-of-type(3) {
+				background-image: url(./../images/005_imagelibrary/IL_03.jpg);
+			}
+			&:nth-of-type(4) {
+				background-image: url(./../images/005_imagelibrary/IL_04.jpg);
+			}
+
+			&:hover > p {
+				display: flex;
+			}
+			> p {
+				display: none;
+				position: absolute;
+				left: 50%;
+				bottom: 10px;
+				margin-left: -130px;
+				color: #fff;
+				font-size: 24px;
+				line-height: 1.1;
+
+				@media #{$mobile} {
+					display: flex;
+					flex-direction: column;
+					justify-content: end;
+					align-items: center;
+					position: initial;
+					width: 100%;
+					height: 100%;
+					margin: initial;
+				}
+			}
+		}
+	}
+} //end of #imagelibrary
+
+footer {
+	min-width: 1200px;
+	height: 150px;
+	background-color: #212121;
+
+	@media #{$mobile} {
+		min-width: 100%;
+	}
+	> .logolink {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		width: 1200px;
+		margin: 0 auto;
+		@media #{$mobile} {
+			width: 90%;
+		}
+		> .cjLogo {
+			display: block;
+			width: 80px;
+			height: 80px;
+			text-indent: -9999px;
+			background-image: url(./../images/006_footer/ci-white.png);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+
+			@media #{$mobile} {
+				width: 50px;
+				height: 50px;
+			}
+		}
+		> .snslogo {
+			display: flex;
+			justify-content: space-around;
+			position: absolute;
+			top: 25px;
+			right: 15px;
+			width: 300px;
+			height: 60px;
+			@media #{$mobile} {
+				width: 250px;
+			}
+
+			> p {
+				width: 40px;
+				height: 40px;
+				background-color: #000;
+				border-radius: 50%;
+				@media #{$mobile} {
+					width: 30px;
+					height: 30px;
+				}
+				> a {
+					display: block;
+					color: #ccc;
+					font-size: 24px;
+					line-height: 40px;
+					text-align: center;
+					@media #{$mobile} {
+						font-size: 14px;
+						line-height: 30px;
+					}
+				}
+			}
+		} //end of .snslogo
+	} //end of .logolink
+
+	> span {
+		display: block;
+		width: 1200px;
+		height: 1px;
+		margin: 0 auto;
+		background-color: #666;
+		@media #{$mobile} {
+			width: 90%;
+			margin: 20px auto;
+		}
+	}
+
+	> .policy {
+		display: flex;
+		justify-content: space-between;
+		width: 1200px;
+		margin: 10px auto 0;
+		@media #{$mobile} {
+			width: 90%;
+		}
+		> .policy-main {
+			color: #fff;
+
+			> a {
+				color: #fff;
+			}
+
+			> span {
+				display: inline-block;
+				margin: 0 20px;
+				color: #666;
+			}
+
+			> address {
+				margin-top: 20px;
+				color: #666;
+			}
+		}
+
+		> .wa {
+			> img {
+				display: block;
+				width: 80px;
+				@media #{$mobile} {
+					display: none;
+				}
+			}
+		}
+	} //end of .policy
+} //end of footer
+
+aside {
+	display: none;
+	position: fixed;
+	right: 3em;
+	bottom: 3em;
+	width: 60px;
+	z-index: 1000;
+	@media #{$mobile} {
+		width: 30px;
+	}
+
+	> a {
+		display: block;
+		height: 60px;
+		background-color: #7e7e7e;
+		background-image: url(./../images/006_footer/go-to-top.png);
+		background-position: center center;
+		background-repeat: no-repeat;
+		@media #{$mobile} {
+			height: 30px;
+			background-size: 50%;
+		}
+	}
+} //end of aside
